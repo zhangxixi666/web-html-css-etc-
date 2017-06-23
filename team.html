@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>team</title>
+	<meta charset="utf-8">
+	<style type="text/css">#frame {/*----------图片轮播相框容器----------*/  
+        position: absolute; /*--绝对定位，方便子元素的定位*/  
+        width: 480px;  
+        height: 270px;  
+        overflow: hidden;/*--相框作用，只显示一个图片---*/  
+        border-radius:5px;  
+    }  
+#dis {/*--绝对定位方便li图片简介的自动分布定位---*/  
+        position: absolute;  
+        left: -480px;  
+        top: -10px;
+        opacity: 0.5;
+    }  
+
+#photos img {  
+        float: left;  
+        width:480px;  
+        height:300px;  
+    }  
+#photos {/*---设置总的图片宽度--通过位移来达到轮播效果----*/  
+        position: absolute;
+        z-index:9px;  
+        width: calc(480px * 5);/*---修改图片数量的话需要修改下面的动画参数*/  
+    }  
+.play{  
+        animation: ma 20s ease-out infinite alternate;/**/  
+    }  
+    @keyframes ma {/*---每图片切换有两个阶段：位移切换和静置。中间的效果可以任意定制----*/  
+        0%,20% {        margin-left: 0px;       }  
+        25%,40% {       margin-left: -480px;    }  
+        45%,60% {       margin-left: -960px;    }  
+        65%,80% {       margin-left: -1440px;    }  
+        85%,100% {      margin-left: -1920px;   }  
+    }  
+.num{  
+        position:absolute;z-index:10;  
+        display:inline-block;  
+        right:10px;top:240px;  
+        border-radius:100%;  
+        background:rgb(249,212,143);  
+        width:25px;height:25px;  
+        line-height:25px;  
+        cursor:pointer;  
+        color:white;  
+        text-align:center;  
+        opacity:0.8;  
+    }  
+.num:hover{background:rgb(249,212,143);opacity: 1;font-weight: bold;}  
+.num:hover,#photos:hover{animation-play-state:paused;}  
+.num:nth-child(2){margin-right:30px}  
+.num:nth-child(3){margin-right:60px}  
+.num:nth-child(4){margin-right:90px}  
+.num:nth-child(5){margin-right:120px}  
+#a1:hover ~ #photos{animation: ma1 .5s ease-out forwards;}  
+#a2:hover ~ #photos{animation: ma2 .5s ease-out forwards;}  
+#a3:hover ~ #photos{animation: ma3 .5s ease-out forwards;}  
+#a4:hover ~ #photos{animation: ma4 .5s ease-out forwards;}  
+#a5:hover ~ #photos {animation: ma5 .5s ease-out forwards;}  
+@keyframes ma1 {100%{margin-left:-0px;} }  
+@keyframes ma2 {100%{margin-left:-480px;} }  
+@keyframes ma3 {100%{margin-left:-960px;} }  
+@keyframes ma4 {100%{margin-left:-1440px;} }  
+@keyframes ma5 {100%{margin-left:-1920px;} }
+	#frame{
+		position: absolute;
+		top: 50px;
+		right: 50px
+	}
+	body{
+		background-image: url(personal/56da54660b192.jpg);
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+	#team{
+		font-family: 'French Script MT' ;
+		font-size: 100px;
+		color: rgb(249,212,143);
+		padding: 0;
+		margin: 0;
+		height:0px;
+		position: absolute;
+		right: 550px;
+		top: 0px;
+		
+	}
+	#team2 span{
+		font-size: 50px;
+		color: rgb(249,212,143);
+		position: absolute;
+		left: 735px;
+		top: 100px
+	}
+	#final{
+		font-size: ;
+		color:  rgb(249,212,143);
+		width: 500px;
+		position: absolute;
+		bottom: 50px;
+		right: 35px;
+		text-indent: 2em;
+		font-family: '楷体';
+		font-size: 18px;
+	}
+	#num a{
+			font-size: 30px;
+			color: rgb(249,212,143);
+			text-decoration: none;
+			font-family: '楷体';
+			text-shadow: 3px 1px 6px #000;
+		}
+		#num a:hover{
+			font-family: '楷体';
+			text-shadow: 3px 1px 6px #000;
+			font-weight: bold;
+		}
+		#num{
+			position: absolute;
+			top: 500px;
+			left: 710px;
+		}
+</style>
+</head>
+<body>
+	<div id="frame" >  
+	        <a id="a1" class="num">5</a>  
+	        <a id="a2" class="num">4</a>  
+	        <a id="a3" class="num">3</a>  
+	        <a id="a4" class="num">2</a>  
+	        <a id="a5" class="num">1</a>  
+	        <div id="photos" class="play">  
+	              <img src="personal\IMG_6273.JPG" >  
+	              <img src="personal\IMG_6294.JPG" >  
+	              <img src="personal\IMG_6296.JPG" >  
+	              <img src="personal\IMG_6301.JPG" >  
+	              <img src="personal\IMG_7773.JPG" >  
+	             
+	       </div>
+	 </div> 
+	   <div id="team">
+	   		run as one
+	   </div>
+	   <div id="team2">
+	   		<span>团队之力</span>
+	   </div>
+	   <div id="final">
+	   		<p>三年两冠，软件男篮创造着辉煌。2017年，十院联赛、校联赛、总决赛以及各种热身赛，软件男篮无一落败。这只伟大的团队经历了无数磨难，克服了重重困难，终于登上了师大之巅。而软件男篮，这个团队在发挥威力之时少不了每个成员的努力，他们从各方面给团队做着贡献。球队的顶梁柱来自于大三的球员们，他们是取胜之匙，他们在登顶之路的每场比赛中都会有精彩的绽放。顺境时依然按章法攻守，危难时一定有人站出来雪中送炭。每一个抢断，每一个封盖，每一次得分，每一次呐喊……都灌注了软件男篮的活力，都为比赛的取胜奠定着必不可少的基础。</p>
+	   		<p>打下江山不易，守江山更不易，卷土重来重登巅峰更更不易，而这些球队的顶梁柱们已经把这些种种不易走了个遍。当荣誉和守护的职责传递给新生力量，请新主人们别畏惧，把理所应当的王者光环戴在自己头上，以一个冠军的姿态去守护软件男篮的荣誉。</p>
+	   </div>
+	   <div id="num">
+	   		<a href="champion_1.html">♔♕返回主页♙♜</a>
+	   </div>
+
+</body>
+</html>
