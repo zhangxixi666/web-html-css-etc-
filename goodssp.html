@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>goods</title>
+	<style type="text/css">
+		#all{
+			height: 300px;
+			width: 500px;
+		}
+		#lbanner{
+			height: 20px;
+			width: 500px;
+			padding: 0;
+			margin: 0;
+			text-indent: 2em;
+			background: rgb(243,248,254);
+		}
+		#stars{
+			padding: 5px;
+			margin-left: 25px;
+		}
+		#revw{
+			width: 400px;
+			height: 200px;
+			margin-left: 25px;
+		}
+		ul{list-style-type: none;padding: 0;margin: 0}
+		li{
+			float: left;
+			margin-left: 5px;
+		}
+	</style>
+
+	<script type="text/javascript">
+				var con=false;
+				function showPic(which){
+			if(con==true) return 0;
+			var x=document.getElementsByTagName("img");
+			for (var i = 0; x[i-1] != which; i++) {
+				x[i].src="images/star2.png";
+			}
+			if(i-1<=1){
+				for(var j=0;j<=i-1;j++){
+					x[j].src="images/star1.png";
+				}
+			}
+			
+		}
+		function gray(){
+			if(con==true) return 0;
+			var x=document.getElementsByTagName("img");
+			for (var i = x.length - 1; i >= 0; i--) {
+				x[i].src="images/star0.png";
+			}
+			
+		}
+		function Stars(which){
+			con=true;
+			var x=document.getElementsByTagName("img");
+			for (var i = 0; x[i-1] != which; i++) {
+				x[i].src="images/star2.png";
+			}
+			if(i-1<=1){
+				for(var j=0;j<=i-1;j++){
+					x[j].src="images/star1.png";
+				}
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<div id="all">
+		<div id="lbanner">宝贝与描述相符（打分匿名）</div>
+		<div id="stars">
+			<ul>
+				<li>
+					<img id="star" src="images/star0.png" onmouseover ="showPic(this)" onmouseout="gray()" onclick="Stars(this)">
+				</li>
+				<li>
+					<img id="star" src="images/star0.png" onmouseover ="showPic(this)" onmouseout="gray()" onclick="Stars(this)">
+				</li>
+				<li>
+					<img id="star" src="images/star0.png" onmouseover ="showPic(this)" onmouseout="gray()" onclick="Stars(this)">
+				</li>
+				<li>
+					<img id="star" src="images/star0.png" onmouseover ="showPic(this)" onmouseout="gray()" onclick="Stars(this)">
+				</li>
+				<li>
+					<img id="star" src="images/star0.png" onmouseover ="showPic(this)" onmouseout="gray()" onclick="Stars(this)">
+				</li>
+			</ul>
+		</div>
+		<div id="rev">
+			<textarea id="revw"></textarea>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>goods</title>
+	<style type="text/css">
+		#all{
+			height: 300px;
+			width: 500px;
+		}
+		#lbanner{
+			height: 20px;
+			width: 500px;
+			padding: 0;
+			margin: 0;
+			text-indent: 2em;
+			background: rgb(243,248,254);
+		}
+		#stars{
+			padding: 5px;
+			margin-left: 25px;
+		}
+		#revw{
+			width: 400px;
+			height: 200px;
+			margin-left: 25px;
+		}
+		ul{list-style-type: none;padding: 0;margin: 0}
+		li{
+			float: left;
+			margin-left: 5px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		var jst=false;
+		function showPic(){
+			if(jst==true) return 0;
+			document.getElementById('star').src = "images/star4.gif"
+		}
+		function gray(){
+			if(jst==true) return 0;
+			document.getElementById('star').src = "images/star0.png"
+		}
+		function showPic1(){
+			if(jst==true) return 0;
+			document.getElementById('star1').src = "images/star4.gif";
+			document.getElementById('star').src = "images/star4.gif"
+		}
+		function gray1(){
+			if(jst==true) return 0;
+			document.getElementById('star1').src = "images/star0.png";
+			document.getElementById('star').src = "images/star0.png";
+		}
+		function showPic2(){
+			if(jst==true) return 0;
+			document.getElementById('star2').src = "images/star4.gif";
+			document.getElementById('star1').src = "images/star4.gif";
+			document.getElementById('star').src = "images/star4.gif";
+		}
+		function gray2(){
+			if(jst==true) return 0;
+			document.getElementById('star2').src = "images/star0.png";
+			document.getElementById('star1').src = "images/star0.png";
+			document.getElementById('star').src = "images/star0.png";
+		}
+		function showPic3(){
+			if(jst==true) return 0;
+			document.getElementById('star3').src = "images/star4.gif";
+			document.getElementById('star2').src = "images/star4.gif";
+			document.getElementById('star1').src = "images/star4.gif";
+			document.getElementById('star').src = "images/star4.gif";
+		}
+		function gray3(){
+			if(jst==true) return 0;
+			document.getElementById('star3').src = "images/star0.png";
+			document.getElementById('star2').src = "images/star0.png";
+			document.getElementById('star1').src = "images/star0.png";
+			document.getElementById('star').src = "images/star0.png";
+		}
+		function showPic4(){
+			if(jst==true) return 0;
+			document.getElementById('star4').src = "images/star4.gif";
+			document.getElementById('star3').src = "images/star4.gif";
+			document.getElementById('star2').src = "images/star4.gif";
+			document.getElementById('star1').src = "images/star4.gif";
+			document.getElementById('star').src = "images/star4.gif";
+		}
+		function gray4(){
+			if(jst==true) return 0;
+			document.getElementById('star4').src = "images/star0.png";
+			document.getElementById('star3').src = "images/star0.png";
+			document.getElementById('star2').src = "images/star0.png";
+			document.getElementById('star1').src = "images/star0.png";
+			document.getElementById('star').src = "images/star0.png";
+		}
+		function Stars0(){
+			jst=true;
+			document.getElementById('star').src = "images/star1.png";
+		}
+		function Stars1(){
+			jst=true;
+			document.getElementById('star1').src = "images/star1.png";
+			document.getElementById('star').src = "images/star1.png";
+		}
+		function Stars2(){
+			jst=true;
+			document.getElementById('star2').src = "images/star2.png";
+			document.getElementById('star1').src = "images/star2.png";
+			document.getElementById('star').src = "images/star2.png";
+		}
+		function Stars3(){
+			jst=true;
+			document.getElementById('star3').src = "images/star2.png";
+			document.getElementById('star2').src = "images/star2.png";
+			document.getElementById('star1').src = "images/star2.png";
+			document.getElementById('star').src = "images/star2.png";
+		}
+		function Stars4(){
+			jst=true;
+			document.getElementById('star4').src = "images/star2.png";
+			document.getElementById('star3').src = "images/star2.png";
+			document.getElementById('star2').src = "images/star2.png";
+			document.getElementById('star1').src = "images/star2.png";
+			document.getElementById('star').src = "images/star2.png";
+		}
+	</script>
+</head>
+<body>
+	<div id="all">
+		<div id="lbanner">宝贝与描述相符（打分匿名）</div>
+		<div id="stars">
+			<ul>
+				<li>
+					<img id="star" src="images/star0.png" onmouseover ="showPic()" onmouseout="gray()" onclick="Stars0()">
+				</li>
+				<li>
+					<img id="star1" src="images/star0.png" onmouseover ="showPic1()" onmouseout="gray1()" onclick="Stars1()">
+				</li>
+				<li>
+					<img id="star2" src="images/star0.png" onmouseover ="showPic2()" onmouseout="gray2()" onclick="Stars2()">
+				</li>
+				<li>
+					<img id="star3" src="images/star0.png" onmouseover ="showPic3()" onmouseout="gray3()" onclick="Stars3()">
+				</li>
+				<li>
+					<img id="star4" src="images/star0.png" onmouseover ="showPic4()" onmouseout="gray4()" onclick="Stars4()">
+				</li>
+			</ul>
+		</div>
+		<div id="rev">
+			<textarea id="revw"></textarea>
+		</div>
+	</div>
+</body>
+</html>
