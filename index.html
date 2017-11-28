@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  	<title>图片自动滚动</title>
+  	<style type="text/css">
+  		#picScroll{
+  			white-space: nowrap;
+  			overflow: hidden;
+  			width: 1500px;
+  		}
+  	</style>
+  	
+</head>
+
+<body>
+	<div id="picScroll"  onmouseover="On()" onmouseout="Down">
+		
+			<span id="picScroll1" onmouseover="On()">
+				<img src="images/1.jpg"/>
+				<img src="images/2.jpg" />
+				<img src="images/3.jpg" />
+				<img src="images/4.jpg" />
+				<img src="images/5.jpg" />
+				<img src="images/6.jpg" />
+				<img src="images/7.jpg" />
+				<img src="images/8.jpg" />
+			</span>
+			<span id="picScroll2"  onmouseover="On()"></span>
+	 	
+ 	</div> 
+</body>
+<script type="text/javascript">
+  		var el=false;
+  		function On(){el=true;}
+  		function Down(){el=false;}
+  		var kst=function(){
+  		 	
+  var a = document.getElementById("picScroll");
+  var img1 = document.getElementById("picScroll1");
+  var img2 = document.getElementById("picScroll2");
+  var imgs =a.getElementsByTagName('img');
+  var timer1 = null;
+  var timer2 = null;
+  img2.innerHTML = img1.innerHTML;
+ 
+  function imgScroll(){
+    if(a.scrollLeft >= img2.offsetWidth){
+      a.scrollLeft=0;
+    }else{
+      a.scrollLeft+=3;
+    }
+    stopScroll();
+  }
+ timer1 = setInterval(imgScroll,25);
+ 
+  function stopScroll(){
+    if(a.scrollLeft%imgs[0].offsetWidth == 0)
+    {
+        clearInterval(timer1);
+        timer2 = setTimeout('timer1 = setInterval(imgScroll,25)',1000);
+    }
+    
+  }
+};
+if(el==false)kst();
+  		
+  	</script>
+</html>
