@@ -1,68 +1,57 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
-  	<title>图片自动滚动</title>
-  	<style type="text/css">
-  		#picScroll{
-  			white-space: nowrap;
-  			overflow: hidden;
-  			width: 1500px;
-  		}
-  	</style>
-  	
+    <title> 仿QQ空间相册 </title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        #main{
+        width:1000px;
+        margin:auto;
+        }
+        #smallpic{
+        height:120px; 
+        }
+        img{
+        float:left; 
+        margin-right:10px; 
+        margin-bottom:10px;
+        }
+        #smallpic img:hover{
+            cursor:pointer; /*设定鼠标的形状为小手*/
+        }
+        .pb{
+         border:3px solid #14c3fd;
+        } 
+    </style>
+
 </head>
 
 <body>
-	<div id="picScroll"  onmouseover="On()" onmouseout="Down">
-		
-			<span id="picScroll1" onmouseover="On()">
-				<img src="images/1.jpg"/>
-				<img src="images/2.jpg" />
-				<img src="images/3.jpg" />
-				<img src="images/4.jpg" />
-				<img src="images/5.jpg" />
-				<img src="images/6.jpg" />
-				<img src="images/7.jpg" />
-				<img src="images/8.jpg" />
-			</span>
-			<span id="picScroll2"  onmouseover="On()"></span>
-	 	
- 	</div> 
+    <div id="main">
+        <div id="smallpic">
+            <img src="images/s2.jpg" width="180" height="100" onclick="plus(this)" />
+            <img src="images/s3.jpg" width="180" height="100" onclick="plus(this)"/>
+            <img src="images/s4.jpg" width="180" height="100" onclick="plus(this)"/>
+            <img src="images/s5.jpg" width="180" height="100" onclick="plus(this)"/>
+            <img src="images/s6.jpg" width="180" height="100" onclick="plus(this)"/>
+        </div>
+        <div >
+            <img id="bigpic" src="images/s1.jpg" width="940px" />
+        </div>
+    </div> 
 </body>
 <script type="text/javascript">
-  		var el=false;
-  		function On(){el=true;}
-  		function Down(){el=false;}
-  		var kst=function(){
-  		 	
-  var a = document.getElementById("picScroll");
-  var img1 = document.getElementById("picScroll1");
-  var img2 = document.getElementById("picScroll2");
-  var imgs =a.getElementsByTagName('img');
-  var timer1 = null;
-  var timer2 = null;
-  img2.innerHTML = img1.innerHTML;
- 
-  function imgScroll(){
-    if(a.scrollLeft >= img2.offsetWidth){
-      a.scrollLeft=0;
-    }else{
-      a.scrollLeft+=3;
-    }
-    stopScroll();
-  }
- timer1 = setInterval(imgScroll,25);
- 
-  function stopScroll(){
-    if(a.scrollLeft%imgs[0].offsetWidth == 0)
-    {
-        clearInterval(timer1);
-        timer2 = setTimeout('timer1 = setInterval(imgScroll,25)',1000);
-    }
-    
-  }
-};
-if(el==false)kst();
-  		
-  	</script>
+        var big = document.getElementById("bigpic");
+        var etc = document.getElementsByTagName('img');
+        function plus(which){
+            for(i=0;i<=4;i++){
+                etc[i].style.borderStyle = "none";
+                etc[i].style.borderColor = "none";
+            }
+            which.style.borderStyle = "solid";
+            which.style.borderColor = "orange";
+            big.src=which.src;
+        }
+    </script>
+
 </html>
