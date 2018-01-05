@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>land</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.bg{
+			background: url(bg2.JPG);
+			height:712px;
+            text-align: center;
+            line-height: 600px;	
+		}
+		.blur{
+			float: left;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+			
+            filter: blur(10px);
+		}
+		#login{
+			list-style-type: none;
+			position: fixed;
+			top:20%;
+			right:45%;
+			background-color: 
+		}
+		#login li{
+			margin: 15px;
+		}
+		input{
+			color: gray;
+			border: 0.5;
+			height: 25px;
+			width: 150px;
+			opacity: 0.75;
+		}
+		#btn{
+			position: relative;
+			left: 2px;
+			font-size:1em;
+			font-weight: bold;
+			font-family: "楷体";
+			opacity: 0.75;
+		}
+		#one{
+			color: #00FFCC;
+			font-size: 3em;
+			font-family: "Times New Roman";
+		}
+		#two{
+			color: #00FF99;
+			font-size: 3em;
+			font-family: "French Script MT";
+		}
+		#thr{
+			color: #CCFF00;
+			font-size: 3em;
+			font-family: Arial;
+		}
+		.ui-progressbar {
+    position: relative;
+  }
+  .progress-label {
+    position: absolute;
+    left: 50%;
+    top: 4px;
+    font-weight: bold;
+    text-shadow: 5px 5px 0 #fff;
+    font-family: "楷体";
+  }
+  	#progressbar{
+  		position: relative;
+  		
+  	}
+
+
+  	#nav{
+		margin-top: 20px;
+		margin-left: 50px;
+		list-style:none;
+		line-height:27px;
+		position: absolute;
+		top:2%;
+		right:40%;
+		}
+		#nav a:link,#nav a:visited{
+		display:block;
+		width:80px;
+		color: #666;
+		text-align:center;
+		text-decoration:none;
+		background:white;
+		opacity: 0.65;
+		}
+		#nav a:hover{
+		color: #FFF;
+		text-decoration: underline;
+		font-weight: bold;
+		background:#999;
+		}
+		#nav ul{list-style: none;}
+		#nav li{
+		float:left;
+		width: 80px;v
+		}
+		#nav li ul li a:hover{
+		background:#CCFF00;
+		}
+
+		#nav li ul{
+		display:none;
+		list-style: none;
+		}
+		#nav li.subMenuShow ul{
+		display:block;
+		}
+
+			* {
+		font-size:15px;
+		margin:0px;
+		padding:0px;
+		}
+
+	</style>
+</head>
+ <link href="jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet">
+  <script src="jquery-3.2.1.min.js"></script>
+  <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var judge = 0;
+		var jud = 0;
+		var $user = $('input[name="username"]');
+		var $psw = $('input[name="password"]');
+		$($user).click(function(){
+			if(judge == 0){$user.val("");judge=1;}
+			else{return false;}
+		})
+		$($psw).click(function(){
+			if(jud == 0){$psw.attr('type','password');
+			$psw.val("");
+			jud = 1;}
+			else{return false;}
+		})
+		$("#btn").click(function(){
+			if(($user.val() == "" )||( $user.val() == "用户名")){alert("用户名不得为空！")}
+			else if(($psw.val() == "" )|| ($psw.val() == "密码")){alert("密码不得为空！")}
+			
+
+
+		})
+	})
+	$(function() {
+    var progressbar = $( "#progressbar" ),
+      progressLabel = $( ".progress-label" );
+ 
+    progressbar.progressbar({
+      value: false,
+      change: function() {
+        progressLabel.text( progressbar.progressbar( "value" ) + "%" );
+      },
+      complete: function() {
+        progressLabel.text( "体验生活的美好！" );
+      }
+    });
+ 
+    function progress() {
+      var val = progressbar.progressbar( "value" ) || 0;
+ 
+      progressbar.progressbar( "value", val + 1 );
+ 
+      if ( val < 99 ) {
+        setTimeout( progress, 100 );
+      }
+    }
+ 
+    setTimeout( progress, 3000 );
+  });
+
+	window.onload = function(){
+			var liNodes = document.getElementsByTagName("li");
+			for (var i=0; i<liNodes.length; i++)
+			{
+				liNodes[i].onmouseover = function(){
+					this.className = "subMenuShow";
+				}
+				liNodes[i].onmouseout = function(){
+					this.className = "";
+				}
+			}
+		}
+</script>
+<body>
+<div>
+	<div class="bg blur"></div>
+	<div id="progressbar"><div class="progress-label">加载...</div></div>
+	
+	<ul id="nav">
+		<li><a  href="#">主页</a>
+			<ul >
+				<li><a href="picshow.html">Mine</a></li>
+				<li><a href="https://www.duitang.com/">Suger</a></li>
+				
+			</ul>
+		</li>
+		<li><a href="#">相册</a>
+			<ul>
+				<li><a href="#">Loading</a></li>
+				<li><a href="#">Loading</a></li>
+				
+			</ul>
+		</li>
+		<li><a href="#">日志</a>
+			<ul>
+				<li><a href="#">For me</a></li>
+				<li><a href="#">For us</a></li>
+				
+			</ul>
+		</li>
+		<li><a href="#">圈子</a>
+			<ul>
+				<li><a href="https://qzone.qq.com/">Qzone</a></li>
+				<li><a href="https://wx.qq.com/">Wechat</a></li>
+				
+			</ul> 
+		</li>
+		
+	</ul>
+
+	<ul id="login">
+		<li><span id="one">Lud</span><span id="two">wig</span><span id="thr">'S</span></li>
+		<li><input type="username" name="username" value="用户名"><br><input type="username" name="password" value="密码"></li>
+		<li><input type="button" name="button" id="btn" value="登录" ></li>
+	</ul>
+</div>
+</body>
+</html>
+

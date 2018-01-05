@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>  </title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        .bg{
+            background: url(bg2.JPG);
+            height:740px;
+            text-align: center;
+            line-height: 800px; 
+        }
+        .blur{
+            float: left;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            
+            filter: blur(10px);
+        }
+        #main{
+        width:100%;
+        margin:auto;
+        }
+        #smallpic{
+        height:120px; 
+        position: fixed;
+        right:13%;
+        }
+        img{
+        float:left; 
+        margin-right:10px; 
+        margin-bottom:10px;
+        }
+        #smallpic img:hover{
+            cursor:pointer; /*设定鼠标的形状为小手*/
+        }
+        .pb{
+         border:2px solid #00ccff;
+        } 
+        #big{
+            position: fixed;
+            top: 31%;
+            right: 40%;
+        }
+    </style>
+    <script type="text/javascript">
+        function showbig(obj){
+            var pic=obj.src;
+            var smpics=document.getElementById('smallpic');
+            var imgs=smpics.getElementsByTagName('img');
+            for (var i=0; i<imgs.length ;i++ ){
+                imgs[i].className='';
+            };
+            obj.className='pb';
+            var bigpic=document.getElementById('bigpic');
+            bigpic.src=pic;
+        }
+       $(function(){
+        var x = 15;
+        var y = 10;
+        $(".tooltip").mouseover(function(e){
+            this.myTitle = this.title;
+            this.title = "";
+            var tooltip = "<div id='tooltip'>" + this.myTitle + "</div>";
+             $("body").append(tooltip);
+             $("#tooltip").css({ "top": (e.pageY + y) + "px", "left": (e.pageX + x) + "px" }).show("fast");
+             }).mouseout(function () { //当鼠标指针从元素上移开时 
+             this.title = this.myTitle;
+             $("#tooltip").remove();
+             }).mousemove(function (e) { //当鼠标指针从元素上移动时 
+             $("#tooltip").css({ "top": (e.pageY + y) + "px", "left": (e.pageX + x) + "px" });
+        })
+       })
+
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <div class="bg blur"></div>
+        <div id="smallpic">
+            <img src="pic1.jpeg" width="150" height="220"  class="tooltip" title="海洋1" onclick="showbig(this)"/>
+            <img src="pic3.jpeg" width="150" height="220"  class="tooltip" title="海洋2" onclick="showbig(this)"/>
+            <img src="pic4.jpeg" width="150" height="220"  class="tooltip" title="海洋3"  onclick="showbig(this)"/>
+            <img src="pic5.jpeg" width="150" height="220"  class="tooltip" title="海洋4" onclick="showbig(this)"/>
+            <img src="pic6.jpeg" width="150" height="220"  class="tooltip"  title="海洋5" onclick="showbig(this)"/>
+             <img src="pic7.jpeg" width="150" height="220"  class="tooltip" title="海洋6" onclick="showbig(this)"/>
+            <img src="pic8.jpeg" width="150" height="220" class="tooltip" title="海洋7" onclick="showbig(this)"/>
+            
+        </div>
+        <div id="big">
+            <img id="bigpic" src="pic6.jpeg" width="300px" height="600px" />
+        </div>
+    </div>
+</body>
+</html>
